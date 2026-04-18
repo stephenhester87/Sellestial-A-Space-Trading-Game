@@ -45,7 +45,7 @@ This roadmap outlines the core features of Sellestial, a text-based space-tradin
 ## Game Flow
 - [ ] Display player status (wallet, fuel, inventory)
 - [ ] Show market prices in the current region
-- [ ] Allow player to:
+- Allow player to:
   - [ ] Buy
   - [ ] Sell
   - [ ] Travel
