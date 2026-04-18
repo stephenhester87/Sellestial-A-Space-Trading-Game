@@ -21,7 +21,7 @@ Player System
 - [ ] Cargo capacity (starts at 1)
 
 Market System
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 - [ ] Multiple regions
 - [ ] Different buy/sell prices per region
 
