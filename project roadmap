@@ -16,7 +16,6 @@ Player System
 Market System
 ~~~~~~~~~~~~~
 - Multiple regions
-- Same items in each region
 - Different buy/sell prices per region
 
 Trading System
@@ -33,7 +32,7 @@ Travel System
 
 Ship Upgrades
 ~~~~~~~~~~~~~
-- Upgrade ship to increase cargo capacity
+- Upgrade to a better ship to increase cargo capacity and better fuel efficiency 
 - Each upgrade allows +1 item
 - Upgrades cost money
 
