@@ -1,11 +1,21 @@
+# ======================
+# GLOBAL CONSTANTS
+# ======================
+
 ZJ_PER_AU = 23
+CURRENCY = "SC"
+
+
+# ======================
+# REGION DATA
+# ======================
 
 regions = {
     "Nyx": {
         "fuel_price": 0.15,  # SC per ZJ
         "prices": {
             "Medi-gel": 12,
-            "CPU's": 25,
+            "CPUs": 25,
             "Polymers": 18,
             "Coolant": 10,
             "Robotics": 40,
@@ -23,7 +33,7 @@ regions = {
         "fuel_price": 0.18,
         "prices": {
             "Medi-gel": 15,
-            "CPU's": 20,
+            "CPUs": 20,
             "Polymers": 22,
             "Coolant": 14,
             "Robotics": 35,
@@ -41,7 +51,7 @@ regions = {
         "fuel_price": 0.12,
         "prices": {
             "Medi-gel": 10,
-            "CPU's": 30,
+            "CPUs": 30,
             "Polymers": 16,
             "Coolant": 9,
             "Robotics": 45,
@@ -59,7 +69,7 @@ regions = {
         "fuel_price": 0.22,
         "prices": {
             "Medi-gel": 18,
-            "CPU's": 35,
+            "CPUs": 35,
             "Polymers": 14,
             "Coolant": 20,
             "Robotics": 50,
@@ -73,6 +83,11 @@ regions = {
         }
     }
 }
+
+
+# ======================
+# RARE TRADE ROUTES
+# ======================
 
 rare_items = {
     "Enriched Uranium": {
