@@ -1,7 +1,7 @@
 from data import ships, CURRENCY, regions, ZJ_PER_AU
 
 # Player data
-player_wallet = 15000
+player_wallet = 750
 player_ship = "Ymir"
 current_region = "Nyx"
 current_fuel = 2000
