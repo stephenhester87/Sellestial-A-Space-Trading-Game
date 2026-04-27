@@ -49,6 +49,7 @@ This roadmap outlines the core features of Sellestial, a text-based space-tradin
 ---
 
 ## Game Flow
+- [x] Add intro sequence
 - [x] Name character and ship.
 - [x] Display player status (wallet, fuel, inventory)
 - [x] Show market prices in the current region
