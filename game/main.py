@@ -1,5 +1,5 @@
 from data import ships, CURRENCY, regions, ZJ_PER_AU
-
+import time
 # Player data
 player_wallet = 750
 player_ship = "Ymir"
@@ -8,14 +8,99 @@ current_fuel = 2000
 cargo = []
 last_profit = 0
 
-print("Initializing pilot registration...\n")
+def intro_sequence():
+    lines = [
+        "…",
+        "Consciousness forms.",
+        "",
+        "A low hum vibrates through your bones.",
+        "",
+        "Awareness arrives without consent.",
+        "",
+        "You gasp and gag as fluid drains from your lungs.",
+        "",
+        "Faint muffled voices echo around you.",
+        "",
+        "\"Clone integrity… stable.\"",
+        "\"Neural imprint… in progress.\"",
+        "",
+        "Memory intrudes.",
+        "",
+        "A ship—breaking apart.",
+        "Screaming.",
+        "",
+        "Then nothing...",
+        "",
+        "Your new body reacts before thought.",
+        "",
+        "A sharp intake of breath.",
+        "Your muscles begin to tense.",
+        "",
+        "It passes...",
+        "",
+        "You are alive...",
+        "",
+        "A blurred face comes into focus as a woman in white robes glances in your eyes.",
+        "",
+        "\"Pupillary reflexes are good...and... looks like the neural imprint is complete.\"",
+        "",
+        "She glances off to the left, then back to you.",
+        "",
+        "...",
+        "",
+        "\"Identity reconstruction in progress…\" she continues.",
+        "",
+        "Your name begins to come to you:",    
+        "",
+    ]
+    for line in lines:
+        print(line)
+        time.sleep(1.0)
 
-player_name = input("Enter your pilot name: ")
-ship_name = input("Name your starting ship: ")
+    time.sleep(1.2)
 
-print(f"\nWelcome to Sellestial, Captain {player_name}")
-print(f"Your ship '{ship_name}' is ready for departure.")
-print("---------------------------------------------")
+def intro_sequence2():
+    lines = [
+        "",
+        "The woman in white robes blinks at you, her voice calm and steady.",
+        "", 
+        "\"Welcome back, " + player_name + ".\"",
+        "",
+        "\"Your ship '" + ship_name + "' is in hangar four.... Try avoiding the gas clouds this time please...\"",
+        "",
+        "",
+        "She walks nonchalantly away with her clipboard tucked under her arm. Her footsteps begin to fade.",
+        "",
+        "",
+        "\"... and no, you can't have my number...Hooty Hoo!!!\" she echoes sarcastically, already halfway out the room. ",
+        "",
+        "...",
+        "You didn't even ask...",
+        ""
+            ]
+    for line in lines:
+        print(line)
+        time.sleep(1.0)
+
+    time.sleep(1.2)
+    
+intro_sequence()
+print("Enter your name: ", end="")
+player_name = input()
+
+print()
+print(player_name + ".")
+time.sleep(1)
+
+print(f"{player_name}, Ah yes, you recognize that name now. Your name...")
+time.sleep(1)
+
+ship_name = input("\nShip insurance claim completed.\n Enter your ship's name: ")
+
+
+intro_sequence2()
+print("Welcome to Sellestial! Build your fortune by trading goods across the galaxy. \nBuy low, sell high, and upgrade your ship to reach new markets. Safe travels, trader!")
+print("Type 'list commands' to see available actions.")
 
 
 def display_status():
@@ -62,7 +147,7 @@ while True:
     command_lower = command.lower()
 
     if command_lower == "exit":
-        print("\nGoodbye.")
+        print("\nFarewell, trader.")
         break
 
     elif command_lower == "list commands":
