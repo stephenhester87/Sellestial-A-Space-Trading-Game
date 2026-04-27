@@ -12,15 +12,16 @@ CURRENCY = "SC"
 
 regions = {
     "Nyx": {
-        "fuel_price": 0.15,  # SC per ZJ
-        "prices": {
-            "Medi-gel": 12,
-            "CPUs": 25,
-            "Polymers": 18,
-            "Coolant": 10,
-            "Robotics": 40,
-            "Silicates": 15,
-            "Enriched Uranium": 90
+        "fuel_price": 0.15,
+        "orders": {
+            "Medi-gel": {"buy": 70, "sell": 50},
+            "CPUs": {"buy": 95, "sell": 70},
+            "Polymers": {"buy": 130, "sell": 95},
+            "Coolant": {"buy": 85, "sell": 60},
+            "Robotics": {"buy": 120, "sell": 90},
+            "Silicates": {"buy": 150, "sell": 105},
+            "Enriched Uranium": {"buy": 250, "sell": 180},
+            "Nanites": {"buy": 500, "sell": 450}
         },
         "routes": {
             "Barak": 3,
@@ -31,14 +32,15 @@ regions = {
 
     "Barak": {
         "fuel_price": 0.18,
-        "prices": {
-            "Medi-gel": 15,
-            "CPUs": 20,
-            "Polymers": 22,
-            "Coolant": 14,
-            "Robotics": 35,
-            "Silicates": 18,
-            "Plutonium Isotopes": 95
+        "orders": {
+            "Medi-gel": {"buy": 120, "sell": 95},
+            "CPUs": {"buy": 80, "sell": 60},
+            "Polymers": {"buy": 90, "sell": 65},
+            "Coolant": {"buy": 140, "sell": 100},
+            "Robotics": {"buy": 95, "sell": 70},
+            "Silicates": {"buy": 145, "sell": 120},
+            "Plutonium Isotopes": {"buy": 260, "sell": 190},
+            "Graphene Capacitors": {"buy": 550, "sell": 500}
         },
         "routes": {
             "Nyx": 3,
@@ -49,14 +51,15 @@ regions = {
 
     "Azrael": {
         "fuel_price": 0.12,
-        "prices": {
-            "Medi-gel": 10,
-            "CPUs": 30,
-            "Polymers": 16,
-            "Coolant": 9,
-            "Robotics": 45,
-            "Silicates": 20,
-            "Nanites": 110
+        "orders": {
+            "Medi-gel": {"buy": 95, "sell": 75},
+            "CPUs": {"buy": 150, "sell": 115},
+            "Polymers": {"buy": 110, "sell": 85},
+            "Coolant": {"buy": 45, "sell": 30},
+            "Robotics": {"buy": 175, "sell": 205},
+            "Silicates": {"buy": 100, "sell": 75},
+            "Plutonium Isotopes": {"buy": 500, "sell": 430},
+            "Nanites": {"buy": 275, "sell": 200}
         },
         "routes": {
             "Nyx": 4,
@@ -67,14 +70,15 @@ regions = {
 
     "Abaddon": {
         "fuel_price": 0.22,
-        "prices": {
-            "Medi-gel": 18,
-            "CPUs": 35,
-            "Polymers": 14,
-            "Coolant": 20,
-            "Robotics": 50,
-            "Silicates": 12,
-            "Graphene Capacitors": 120
+        "orders": {
+            "Medi-gel": {"buy": 160, "sell": 125},
+            "CPUs": {"buy": 185, "sell": 145},
+            "Polymers": {"buy": 70, "sell": 50},
+            "Coolant": {"buy": 130, "sell": 105},
+            "Robotics": {"buy": 210, "sell": 165},
+            "Silicates": {"buy": 50, "sell": 35},
+            "Enriched Uranium": {"buy": 500, "sell": 425},
+            "Graphene Capacitors": {"buy": 300, "sell": 230}
         },
         "routes": {
             "Nyx": 6,
@@ -84,52 +88,6 @@ regions = {
     }
 }
 
-
-# ======================
-# RARE TRADE ROUTES
-# ======================
-
-rare_items = {
-    "Enriched Uranium": {
-        "origin": "Nyx",
-        "destination": "Abaddon",
-        "buy_price": 90,
-        "sell_price": 180
-    },
-    "Plutonium Isotopes": {
-        "origin": "Barak",
-        "destination": "Azrael",
-        "buy_price": 95,
-        "sell_price": 185
-    },
-    "Nanites": {
-        "origin": "Azrael",
-        "destination": "Nyx",
-        "buy_price": 110,
-        "sell_price": 200
-    },
-    "Graphene Capacitors": {
-        "origin": "Abaddon",
-        "destination": "Barak",
-        "buy_price": 120,
-        "sell_price": 210
-    }
-}
-
-COMMON_ITEMS = [
-    "Medi-gel",
-    "CPUs",
-    "Polymers",
-    "Coolant",
-    "Robotics",
-    "Silicates"
-]
-RARE_ITEMS = [
-    "Enriched Uranium",
-    "Plutonium Isotopes",
-    "Nanites",
-    "Graphene Capacitors"
-]
 
 # ======================
 # SHIP DATA
@@ -145,19 +103,19 @@ ships = {
     "Huldra": {
         "cargo_capacity": 2,
         "max_fuel": 3000,
-        "price": 2000,
+        "price": 2200,
         "description": "A sleek civilian hauler favored by independent traders.\nEfficient, reliable, and built for those ready to start making real profit."
     },
     "Fafnir": {
         "cargo_capacity": 3,
         "max_fuel": 4000,
-        "price": 4000,
+        "price": 6500,
         "description": "A heavily reinforced industrial freighter.\nDesigned for high-risk trade routes and serious merchants."
     },
     "Jotunn": {
         "cargo_capacity": 4,
         "max_fuel": 5000,
-        "price": 6000,
+        "price": 12000,
         "description": "A massive deep-space carrier.\nMore than a ship—it’s a moving economy."
     }
 }
