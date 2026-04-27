@@ -1,0 +1,10 @@
+- missions (every 5 successful trades you make, you get a random mission to retrieve items and bring them to a mission-giver at a certain region for good pay)
+- transport illegal materials (chance-based to be caught, have your illegal cargo confiscated, and pay a fine, but bigger payoff)
+- pirates (chance to be raided)
+- offense and defense modules that can be added to your ship to reduce the chance of being caught by authorities or pirates
+- bounty system. Successful evasion from authorities will add to your bounty, increasing the chances of being raided by pirates or bounty hunters.
+- random events (stumble on ship debris to recover tier-based material that can be sold at any region for SC based on rarity)
+- Rare pirate encounters event- encounter infamous pirates that can drop the rarest loot if your offense and defense modules can hold them off.
+- Buy stations that will generate passive income for you.
+- Hire NPC fleets to fly one of the purchased ships that will generate passive income for you
+- ship loss - back to square zero with your uncle's clunky hand-me-down Ymir
