@@ -1,7 +1,9 @@
-Sellestial
-==========
+<p align="center">
+  <img src="game/image.png" width="600">
+</p>
 
-Sellestial is a text-based space trading game where players buy low, sell high across different regions while managing fuel and upgrading their ship to maximize profits.
+# Sellestial
+A dystopian text-based space trading game focused on strategy, economy, and player choice.
 
 Overview
 --------
