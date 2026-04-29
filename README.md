@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="game/image.png" width="600">
+  <img src="game/image.png" width="800">
 </p>
 
 # Sellestial
