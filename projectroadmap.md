@@ -21,7 +21,7 @@ This roadmap outlines the core features of Sellestial, a text-based space-tradin
 - [x] display list of commands
 - [x] Inventory (list of items)
 - [x] Cargo capacity (starts at 1)
-- [ ] Implement "Save Game" feature
+- [x] Implement "Save Game" feature
 
 ### Market System
 - [x] Multiple regions
@@ -40,6 +40,7 @@ This roadmap outlines the core features of Sellestial, a text-based space-tradin
 - [x] Travel between regions
 - [x] Each trip costs fuel
 - [x] Prevent travel if not enough fuel
+- [x] add travel sequence for better immersion while warping to a system.
 
 ### Ship Upgrades
 - [x] Upgrade to a better ship to increase cargo capacity and fuel efficiency

@@ -1,5 +1,9 @@
 from data import ships, CURRENCY, regions, ZJ_PER_AU
+from travel import warp_sequence
 import time
+import json
+import os
+
 # Player data
 player_wallet = 750
 player_ship = "Ymir"
@@ -8,25 +12,86 @@ current_fuel = 2000
 cargo = []
 last_profit = 0
 
+# -----------------------------
+# Save/Load functions
+# -----------------------------
+def get_save_filename(name):
+    folder = "saves"
+    filename = name.lower().replace(" ", "_") + "_save.json"
+    return os.path.join(folder, filename)
+
+
+def save_game():
+    os.makedirs("saves", exist_ok=True)
+
+    data = {
+        "player_name": player_name,
+        "ship_name": ship_name,
+        "player_ship": player_ship,
+        "player_wallet": player_wallet,
+        "current_region": current_region,
+        "current_fuel": current_fuel,
+        "cargo": cargo,
+        "last_profit": last_profit
+    }
+
+    filename = get_save_filename(player_name)
+
+    with open(filename, "w") as file:
+        json.dump(data, file)
+
+    print(f"\nGame saved for {player_name}.")
+    
+def load_game():
+    global player_name, ship_name, player_ship
+    global player_wallet, current_region, current_fuel, cargo, last_profit
+
+    name = input("Enter character name to load: ")
+    filename = get_save_filename(name)
+
+    try:
+        with open(filename, "r") as file:
+            data = json.load(file)
+
+        player_name = data["player_name"]
+        ship_name = data["ship_name"]
+        player_ship = data["player_ship"]
+        player_wallet = data["player_wallet"]
+        current_region = data["current_region"]
+        current_fuel = data["current_fuel"]
+        cargo = data["cargo"]
+        last_profit = data["last_profit"]
+
+        print(f"\nSave loaded for {player_name}.")
+
+    except FileNotFoundError:
+        print("\nNo save file found for that character.")
+        
+# -----------------------------
+# Introduction sequence
+# -----------------------------
+
 def intro_sequence():
     lines = [
-        "…",
+        "...",
         "Consciousness forms.",
         "",
         "A low hum vibrates through your bones.",
         "",
         "Awareness arrives without consent.",
         "",
-        "You gasp and gag as fluid drains from your lungs.",
+        "Suspended in fluid, you begin to feel the \n weight of your body as the stasis chamber empties around you.",
         "",
-        "Faint muffled voices echo around you.",
+        "You gasp and gag as cold fluid drains from your lungs.",
         "",
-        "\"Clone integrity… stable.\"",
-        "\"Neural imprint… in progress.\"",
+        "Faint muffled voices echo around you as the cylinder opens.",
+        "",
+        "\"Clone integrity... stable.\"",
+        "\"Neural imprint... in progress.\"",
         "",
         "Memory intrudes.",
         "",
-        "A ship—breaking apart.",
+        "A ship breaking apart.",
         "Screaming.",
         "",
         "Then nothing...",
@@ -34,30 +99,33 @@ def intro_sequence():
         "Your new body reacts before thought.",
         "",
         "A sharp intake of breath.",
+        "",
         "Your muscles begin to tense.",
         "",
         "It passes...",
         "",
         "You are alive...",
         "",
-        "A blurred face comes into focus as a woman in white robes glances in your eyes.",
+        "A blurred face comes into focus as a woman in a white lab coat forces your eyes open.",
         "",
         "\"Pupillary reflexes are good...and... looks like the neural imprint is complete.\"",
         "",
-        "She glances off to the left, then back to you.",
+        "The woman glances off to the left, then back to you.",
         "",
         "...",
         "",
-        "\"Identity reconstruction in progress…\" she continues.",
+        "\"Identity reconstruction in progress...\"",
         "",
-        "Your name begins to come to you:",    
+        "Your name begins to come to you:",
         "",
     ]
+
     for line in lines:
         print(line)
         time.sleep(1.0)
 
     time.sleep(1.2)
+
 
 def intro_sequence2():
     lines = [
@@ -75,6 +143,7 @@ def intro_sequence2():
         "\"... and no, you can't have my number...Hooty Hoo!!!\" she echoes sarcastically, already halfway out the room. ",
         "",
         "...",
+        "",
         "You didn't even ask...",
         ""
             ]
@@ -84,21 +153,26 @@ def intro_sequence2():
 
     time.sleep(1.2)
     
-intro_sequence()
-print("Enter your name: ", end="")
-player_name = input()
+choice = input("Load existing character? (yes/no): ").lower()
 
-print()
-print(player_name + ".")
-time.sleep(1)
+if choice == "yes":
+    load_game()
+else:
+    intro_sequence()
 
-print(f"{player_name}, Ah yes, you recognize that name now. Your name...")
-time.sleep(1)
+    print("Enter your name: ", end="")
+    player_name = input()
 
-ship_name = input("\nShip insurance claim completed.\n Enter your ship's name: ")
+    print()
+    print(player_name + ".")
+    time.sleep(1)
 
+    print(f"{player_name}, Ah yes, you recognize that name now. Your name...")
+    time.sleep(1)
 
-intro_sequence2()
+    ship_name = input("\nShip insurance claim completed.\n Enter your ship's name: ")
+
+    intro_sequence2()
 print("Welcome to Sellestial! Build your fortune by trading goods across the galaxy. \nBuy low, sell high, and upgrade your ship to reach new markets. Safe travels, trader!")
 print("Type 'list commands' to see available actions.")
 
@@ -109,6 +183,7 @@ def display_status():
         f"Wallet: {player_wallet} {CURRENCY} | Fuel: {current_fuel} | "
         f"Current Region: {current_region}]"
     )
+
 
 
 def find_region(region_input):
@@ -167,7 +242,12 @@ while True:
         print("travel to (region) : travel to another region")
         print("rename ship : rename your current ship")
         print("exit : quit the game")
+    
+    elif command_lower == "save":
+        save_game()
 
+    elif command_lower == "load":
+        load_game()
     elif command_lower == "list regions":
         print("\nAvailable Regions:")
         print("------------------")
@@ -325,6 +405,8 @@ while True:
             fuel_cost = distance * ZJ_PER_AU
 
             if current_fuel >= fuel_cost:
+                warp_sequence(current_region, destination, distance, fuel_cost)
+
                 current_fuel -= fuel_cost
                 current_region = destination
 
