@@ -9,3 +9,5 @@
 - Hire NPC fleets to fly one of the purchased ships that will generate passive income for you
 - Ship loss - back to square zero with your uncle's clunky hand-me-down Ymir
 - Add timed text, immersive, story-driven details, and dialogue. Give the environment some life
+- Autosave system
+- Character selection menu

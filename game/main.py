@@ -153,6 +153,11 @@ def intro_sequence2():
 
     time.sleep(1.2)
     
+    
+# -----------------------------
+# Game Start
+# -----------------------------
+
 choice = input("Load existing character? (yes/no): ").lower()
 
 if choice == "yes":
@@ -173,6 +178,7 @@ else:
     ship_name = input("\nShip insurance claim completed.\n Enter your ship's name: ")
 
     intro_sequence2()
+print("")
 print("Welcome to Sellestial! Build your fortune by trading goods across the galaxy. \nBuy low, sell high, and upgrade your ship to reach new markets. Safe travels, trader!")
 print("Type 'list commands' to see available actions.")
 
@@ -214,6 +220,9 @@ def increase_item_price(region_name, item_name):
     regions[region_name]["orders"][item_name]["buy"] = round(regions[region_name]["orders"][item_name]["buy"], 2)
     regions[region_name]["orders"][item_name]["sell"] = round(regions[region_name]["orders"][item_name]["sell"], 2)
 
+# -----------------------------
+# Game Loop
+# -----------------------------
 
 while True:
     display_status()
@@ -242,6 +251,7 @@ while True:
         print("travel to (region) : travel to another region")
         print("rename ship : rename your current ship")
         print("exit : quit the game")
+        print("save : save your current progress")
     
     elif command_lower == "save":
         save_game()
